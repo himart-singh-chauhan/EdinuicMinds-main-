@@ -20,7 +20,7 @@ const CoursesSection: React.FC = () => {
       id: 1,
       title: 'Advanced React Development',
       category: 'B-Tech CSE',
-      image: 'https://images.pexels.com/photos/11035380/pexels-photo-11035380.jpeg?auto=compress&cs=tinysrgb&w=600',
+  image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=600&q=80&fm=webp',
       instructor: 'Dr. Sarah Johnson',
       rating: 4.9,
       students: 2847,
@@ -35,7 +35,7 @@ const CoursesSection: React.FC = () => {
       id: 2,
       title: 'Strategic Business Management',
       category: 'MBA',
-      image: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=600',
+  image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80&fm=webp',
       instructor: 'Prof. Michael Chen',
       rating: 4.8,
       students: 1923,
@@ -50,7 +50,7 @@ const CoursesSection: React.FC = () => {
       id: 3,
       title: 'Machine Learning Fundamentals',
       category: 'Data Science',
-      image: 'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=600',
+  image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80&fm=webp',
       instructor: 'Dr. Aisha Patel',
       rating: 4.9,
       students: 3156,
@@ -65,7 +65,7 @@ const CoursesSection: React.FC = () => {
       id: 4,
       title: 'Digital Marketing Mastery',
       category: 'Marketing',
-      image: 'https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=600',
+  image: 'https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?auto=format&fit=crop&w=600&q=80&fm=webp',
       instructor: 'Maria Rodriguez',
       rating: 4.7,
       students: 2134,
@@ -80,7 +80,7 @@ const CoursesSection: React.FC = () => {
       id: 5,
       title: 'Database Design & Management',
       category: 'BCA/MCA',
-      image: 'https://images.pexels.com/photos/1181677/pexels-photo-1181677.jpeg?auto=compress&cs=tinysrgb&w=600',
+      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80&fm=webp',
       instructor: 'Dr. James Wilson',
       rating: 4.8,
       students: 1876,
@@ -95,7 +95,7 @@ const CoursesSection: React.FC = () => {
       id: 6,
       title: 'Research Methodology',
       category: 'MSc/BSc',
-      image: 'https://images.pexels.com/photos/3184639/pexels-photo-3184639.jpeg?auto=compress&cs=tinysrgb&w=600',
+      image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=600&q=80&fm=webp',
       instructor: 'Prof. Sophie Mueller',
       rating: 4.6,
       students: 1456,
@@ -162,6 +162,7 @@ const CoursesSection: React.FC = () => {
                 <img
                   src={course.image}
                   alt={course.title}
+                  loading="lazy"
                   className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>

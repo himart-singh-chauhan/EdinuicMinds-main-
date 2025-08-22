@@ -29,6 +29,12 @@ export default {
         'heading': ['Montserrat', 'system-ui', 'sans-serif'],
         'body': ['Inter', 'system-ui', 'sans-serif'],
       },
+      backgroundImage: {
+        'grid-pattern': 'linear-gradient(rgba(44, 166, 164, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(44, 166, 164, 0.1) 1px, transparent 1px)',
+      },
+      backgroundSize: {
+        'grid': '20px 20px',
+      },
       animation: {
         'float': 'float 6s ease-in-out infinite',
         'slide-left': 'slideLeft 20s linear infinite',

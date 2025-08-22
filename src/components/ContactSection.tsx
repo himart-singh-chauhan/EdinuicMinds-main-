@@ -12,17 +12,17 @@ const ContactSection: React.FC = () => {
 
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const countries = [
-    'USA', 'Australia', 'Romania', 'Tanzania', 'UK', 'Canada', 
+  const countries = React.useMemo(() => [
+    'USA', 'Australia', 'Romania', 'Tanzania', 'UK', 'Canada',
     'Germany', 'France', 'UAE', 'Singapore', 'Japan'
-  ];
+  ], []);
 
-  const queryTypes = [
-    'Assignment Help', 'Thesis Writing', 'Course Inquiry', 'Technical Support', 
+  const queryTypes = React.useMemo(() => [
+    'Assignment Help', 'Thesis Writing', 'Course Inquiry', 'Technical Support',
     'Pricing Information', 'Partnership', 'Other'
-  ];
+  ], []);
 
-  const faqs = [
+  const faqs = React.useMemo(() => [
     {
       question: 'How do you ensure plagiarism-free work?',
       answer: 'We use advanced plagiarism detection tools and have a strict policy of original content creation. Every piece of work is checked multiple times before delivery.'
@@ -47,21 +47,20 @@ const ContactSection: React.FC = () => {
       question: 'What if I\'m not satisfied with the work?',
       answer: 'We offer a money-back guarantee if the work doesn\'t meet your requirements or our quality standards. Your satisfaction is our priority.'
     }
-  ];
+  ], []);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = React.useCallback((e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
     setIsSubmitted(true);
     setTimeout(() => setIsSubmitted(false), 3000);
-  };
+  }, []);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
+  const handleInputChange = React.useCallback((e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+    setFormData(prev => ({
+      ...prev,
       [e.target.name]: e.target.value
-    });
-  };
+    }));
+  }, []);
 
   return (
     <section id="contact" className="py-20 bg-gradient-to-br from-neutral-50 to-white">
@@ -80,7 +79,7 @@ const ContactSection: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           {/* Contact Information */}
           <div className="space-y-8">
-            <div className="bg-white rounded-2xl p-6 shadow-lg border border-neutral-100">
+            <div className="bg-white rounded-2xl p-6 shadow-lg border border-neutral-100 sticky top-24 z-30">
               <h3 className="font-heading text-xl font-bold text-primary-dark mb-6">
                 Contact Information
               </h3>

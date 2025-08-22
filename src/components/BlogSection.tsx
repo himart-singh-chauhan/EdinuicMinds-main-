@@ -12,7 +12,7 @@ const BlogSection: React.FC = () => {
       id: 1,
       title: 'How to Write a Perfect Thesis Statement in 2024',
       excerpt: 'Master the art of crafting compelling thesis statements that will make your academic papers stand out from the crowd.',
-      image: 'https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?auto=compress&cs=tinysrgb&w=600',
+      image: 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?auto=format&fit=crop&w=600&q=80&fm=webp',
       author: 'Dr. Sarah Johnson',
       date: '2024-01-15',
       category: 'Academic Tips',
@@ -23,7 +23,7 @@ const BlogSection: React.FC = () => {
       id: 2,
       title: 'Top 10 Research Methodologies for Graduate Students',
       excerpt: 'Comprehensive guide to choosing the right research methodology for your graduate-level projects and dissertations.',
-      image: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=600',
+      image: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=600&q=80&fm=webp',
       author: 'Prof. Michael Chen',
       date: '2024-01-12',
       category: 'Research Methods',
@@ -34,7 +34,7 @@ const BlogSection: React.FC = () => {
       id: 3,
       title: 'Career Opportunities in Data Science: A Complete Guide',
       excerpt: 'Explore the booming field of data science and discover the career paths that await skilled professionals.',
-      image: 'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=600',
+      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80&fm=webp',
       author: 'Dr. Aisha Patel',
       date: '2024-01-10',
       category: 'Career Advice',
@@ -45,7 +45,7 @@ const BlogSection: React.FC = () => {
       id: 4,
       title: 'Effective Study Techniques for Online Learning',
       excerpt: 'Maximize your online learning experience with proven study techniques and productivity strategies.',
-      image: 'https://images.pexels.com/photos/4050315/pexels-photo-4050315.jpeg?auto=compress&cs=tinysrgb&w=600',
+      image: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=600&q=80&fm=webp',
       author: 'Maria Rodriguez',
       date: '2024-01-08',
       category: 'Study Guides',
@@ -56,7 +56,7 @@ const BlogSection: React.FC = () => {
       id: 5,
       title: 'The Future of AI in Academic Research',
       excerpt: 'How artificial intelligence is revolutionizing academic research and what it means for students and researchers.',
-      image: 'https://images.pexels.com/photos/8386434/pexels-photo-8386434.jpeg?auto=compress&cs=tinysrgb&w=600',
+      image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=600&q=80&fm=webp',
       author: 'Dr. James Wilson',
       date: '2024-01-05',
       category: 'Technology',
@@ -67,7 +67,7 @@ const BlogSection: React.FC = () => {
       id: 6,
       title: 'Building a Strong Academic Portfolio',
       excerpt: 'Essential tips for creating an impressive academic portfolio that showcases your skills and achievements.',
-      image: 'https://images.pexels.com/photos/3184639/pexels-photo-3184639.jpeg?auto=compress&cs=tinysrgb&w=600',
+      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80&fm=webp',
       author: 'Prof. Sophie Mueller',
       date: '2024-01-03',
       category: 'Career Advice',
@@ -103,9 +103,9 @@ const BlogSection: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-          {/* Main Content */}
-          <div className="lg:col-span-3">
+             <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+               {/* Main Content */}
+               <div className="lg:col-span-3">
             {/* Search and Filter */}
             <div className="mb-8">
               <div className="flex flex-col sm:flex-row gap-4 mb-6">
@@ -147,11 +147,13 @@ const BlogSection: React.FC = () => {
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   <div className="relative overflow-hidden">
-                    <img
-                      src={post.image}
-                      alt={post.title}
-                      className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
+                        <img
+                          src={post.image.replace('auto=format', 'auto=format&fm=webp')}
+                          alt={post.title}
+                          className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                          loading="lazy"
+                          decoding="async"
+                        />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
                     <div className="absolute top-4 left-4 bg-accent-teal text-white px-3 py-1 rounded-full text-sm font-medium">
                       {post.category}
@@ -199,74 +201,53 @@ const BlogSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Sidebar */}
-          <div className="space-y-8">
-            {/* Newsletter Signup */}
-            <div className="bg-gradient-to-br from-primary-dark to-accent-teal rounded-2xl p-6 text-white">
-              <h3 className="font-heading text-lg font-bold mb-3">
-                Stay Updated
-              </h3>
-              <p className="text-white/90 text-sm mb-4">
-                Get the latest academic insights and study tips delivered to your inbox.
-              </p>
-              <div className="space-y-3">
-                <input
-                  type="email"
-                  placeholder="Your email address"
-                  className="w-full px-4 py-2 rounded-lg bg-white/20 backdrop-blur-sm border border-white/30 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/50"
-                />
-                <button className="w-full bg-white text-primary-dark font-medium py-2 px-4 rounded-lg hover:bg-white/90 transition-colors">
-                  Subscribe
-                </button>
-              </div>
-            </div>
+               {/* Sidebar - sticky on large screens, categories card removed */}
+               <div className="space-y-8 lg:sticky lg:top-24 h-fit">
+                 {/* Newsletter Signup */}
+                 <div className="bg-gradient-to-br from-primary-dark to-accent-teal rounded-2xl p-6 text-white">
+                   <h3 className="font-heading text-lg font-bold mb-3">
+                     Stay Updated
+                   </h3>
+                   <p className="text-white/90 text-sm mb-4">
+                     Get the latest academic insights and study tips delivered to your inbox.
+                   </p>
+                   <div className="space-y-3">
+                     <input
+                       type="email"
+                       placeholder="Your email address"
+                       className="w-full px-4 py-2 rounded-lg bg-white/20 backdrop-blur-sm border border-white/30 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/50"
+                     />
+                     <button className="w-full bg-white text-primary-dark font-medium py-2 px-4 rounded-lg hover:bg-white/90 transition-colors">
+                       Subscribe
+                     </button>
+                   </div>
+                 </div>
 
-            {/* Popular Posts */}
-            <div className="bg-white rounded-2xl p-6 shadow-lg border border-neutral-100">
-              <div className="flex items-center space-x-2 mb-4">
-                <TrendingUp className="h-5 w-5 text-accent-teal" />
-                <h3 className="font-heading text-lg font-bold text-primary-dark">
-                  Popular Posts
-                </h3>
-              </div>
-              <div className="space-y-4">
-                {popularPosts.map((post, index) => (
-                  <div key={index} className="flex items-start space-x-3 group cursor-pointer">
-                    <div className="bg-accent-teal/10 text-accent-teal rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold flex-shrink-0">
-                      {index + 1}
-                    </div>
-                    <div className="flex-1">
-                      <h4 className="text-sm font-medium text-primary-dark group-hover:text-accent-teal transition-colors line-clamp-2">
-                        {post.title}
-                      </h4>
-                      <p className="text-xs text-neutral-500 mt-1">{post.views} views</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Categories */}
-            <div className="bg-white rounded-2xl p-6 shadow-lg border border-neutral-100">
-              <div className="flex items-center space-x-2 mb-4">
-                <Tag className="h-5 w-5 text-accent-teal" />
-                <h3 className="font-heading text-lg font-bold text-primary-dark">
-                  Categories
-                </h3>
-              </div>
-              <div className="space-y-2">
-                {categories.slice(1).map((category) => (
-                  <button
-                    key={category}
-                    onClick={() => setSelectedCategory(category)}
-                    className="w-full text-left px-3 py-2 rounded-lg text-sm text-neutral-600 hover:bg-neutral-50 hover:text-accent-teal transition-colors"
-                  >
-                    {category}
-                  </button>
-                ))}
-              </div>
-            </div>
-          </div>
+                 {/* Popular Posts */}
+                 <div className="bg-white rounded-2xl p-6 shadow-lg border border-neutral-100">
+                   <div className="flex items-center space-x-2 mb-4">
+                     <TrendingUp className="h-5 w-5 text-accent-teal" />
+                     <h3 className="font-heading text-lg font-bold text-primary-dark">
+                       Popular Posts
+                     </h3>
+                   </div>
+                   <div className="space-y-4">
+                     {popularPosts.map((post, index) => (
+                       <div key={index} className="flex items-start space-x-3 group cursor-pointer">
+                         <div className="bg-accent-teal/10 text-accent-teal rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold flex-shrink-0">
+                           {index + 1}
+                         </div>
+                         <div className="flex-1">
+                           <h4 className="text-sm font-medium text-primary-dark group-hover:text-accent-teal transition-colors line-clamp-2">
+                             {post.title}
+                           </h4>
+                           <p className="text-xs text-neutral-500 mt-1">{post.views} views</p>
+                         </div>
+                       </div>
+                     ))}
+                   </div>
+                 </div>
+               </div>
         </div>
       </div>
     </section>

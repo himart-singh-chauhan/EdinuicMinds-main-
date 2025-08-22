@@ -136,14 +136,14 @@ const HowItWorks: React.FC = () => {
           ))}
         </div>
 
-        {/* Call to action */}
+        {/* Call to action (Contact Us button added) */}
         <div className="text-center mt-16">
-          <button 
-            onClick={() => window.location.href = '/payment'}
-            className="bg-gradient-to-r from-primary-dark to-accent-teal text-white font-heading font-bold px-8 py-4 rounded-full hover:shadow-2xl hover:scale-105 transition-all duration-300 animate-glow"
+          <a 
+            href="#contact"
+            className="bg-gradient-to-r from-primary-dark to-accent-teal text-white font-heading font-bold px-8 py-4 rounded-full hover:shadow-2xl hover:scale-105 transition-all duration-300 animate-glow inline-block"
           >
-            Payment →
-          </button>
+            Contact Us →
+          </a>
           <p className="mt-4 text-neutral-500">
             Join thousands of satisfied students worldwide
           </p>

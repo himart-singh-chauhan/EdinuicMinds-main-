@@ -12,7 +12,7 @@ const StudentShowcase: React.FC = () => {
       project: 'MBA Thesis',
       grade: 'Grade A+',
       subject: 'Business Strategy',
-      image: 'https://images.pexels.com/photos/3769021/pexels-photo-3769021.jpeg?auto=compress&cs=tinysrgb&w=400',
+  image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80&fm=webp',
       testimonial: 'Edunique Minds helped me achieve excellence in my MBA thesis. Their attention to detail and research quality exceeded my expectations.',
       rating: 5,
       university: 'University of Melbourne',
@@ -24,7 +24,7 @@ const StudentShowcase: React.FC = () => {
       project: 'Research Paper',
       grade: 'Grade A',
       subject: 'Computer Science',
-      image: 'https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=400',
+  image: 'https://images.unsplash.com/photo-1494790108755-2616c5e0b12c?auto=format&fit=crop&w=400&q=80&fm=webp',
       testimonial: 'The quality of work and timely delivery made all the difference in my academic success. Highly recommend their services!',
       rating: 5,
       university: 'University of Toronto',
@@ -36,7 +36,7 @@ const StudentShowcase: React.FC = () => {
       project: 'Dissertation',
       grade: 'Grade A',
       subject: 'Psychology',
-      image: 'https://images.pexels.com/photos/3184298/pexels-photo-3184298.jpeg?auto=compress&cs=tinysrgb&w=400',
+  image: 'https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?auto=format&fit=crop&w=400&q=80&fm=webp',
       testimonial: 'Professional, reliable, and delivered beyond expectations. My dissertation was perfectly structured and well-researched.',
       rating: 5,
       university: 'King\'s College London',
@@ -48,7 +48,7 @@ const StudentShowcase: React.FC = () => {
       project: 'Case Study',
       grade: 'Grade A+',
       subject: 'Finance',
-      image: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400',
+  image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80&fm=webp',
       testimonial: 'Exceptional analytical depth and presentation quality. The case study analysis was comprehensive and insightful.',
       rating: 5,
       university: 'National University of Singapore',
@@ -60,7 +60,7 @@ const StudentShowcase: React.FC = () => {
       project: 'Assignment',
       grade: 'Grade A',
       subject: 'Engineering',
-      image: 'https://images.pexels.com/photos/3184639/pexels-photo-3184639.jpeg?auto=compress&cs=tinysrgb&w=400',
+  image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&q=80&fm=webp',
       testimonial: 'Technical precision and clear explanations. They understood complex engineering concepts and presented them perfectly.',
       rating: 5,
       university: 'Technical University of Munich',
@@ -72,7 +72,7 @@ const StudentShowcase: React.FC = () => {
       project: 'Thesis',
       grade: 'Grade A+',
       subject: 'Marketing',
-      image: 'https://images.pexels.com/photos/2182975/pexels-photo-2182975.jpeg?auto=compress&cs=tinysrgb&w=400',
+  image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80&fm=webp',
       testimonial: 'Outstanding research quality and innovative marketing insights. This thesis helped me secure my dream job!',
       rating: 5,
       university: 'Harvard Business School',
@@ -104,6 +104,7 @@ const StudentShowcase: React.FC = () => {
                 <img
                   src={student.image}
                   alt={`${student.name} - Academic Success`}
+                  loading="lazy"
                   className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
@@ -160,6 +161,7 @@ const StudentShowcase: React.FC = () => {
                 <img
                   src={students[selectedStudent].image}
                   alt={students[selectedStudent].name}
+                  loading="lazy"
                   className="w-full h-64 object-cover"
                 />
                 <button
@@ -235,12 +237,12 @@ const StudentShowcase: React.FC = () => {
           <h3 className="font-heading text-2xl font-bold text-primary-dark mb-4">
             Ready to Join Our Success Stories?
           </h3>
-          <button 
-            onClick={() => window.location.href = '/payment'}
-            className="bg-gradient-to-r from-primary-dark to-accent-teal text-white font-heading font-bold px-8 py-4 rounded-full hover:shadow-2xl hover:scale-105 transition-all duration-300"
+          <a 
+            href="#contact"
+            className="bg-gradient-to-r from-primary-dark to-accent-teal text-white font-heading font-bold px-8 py-4 rounded-full hover:shadow-2xl hover:scale-105 transition-all duration-300 inline-block"
           >
-            Payment →
-          </button>
+            Contact Us →
+          </a>
         </div>
       </div>
     </section>

@@ -8,7 +8,7 @@ const Header: React.FC = () => {
   const scrollToSection = useSmoothScroll();
 
   return (
-    <header className="fixed top-0 w-full bg-white/90 backdrop-blur-md border-b border-neutral-200 z-50">
+  <header className="fixed top-0 w-full bg-white/30 backdrop-blur-2xl border-b border-white/40 shadow-2xl z-50" style={{ WebkitBackdropFilter: 'blur(32px)', backdropFilter: 'blur(32px)' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -101,9 +101,6 @@ const Header: React.FC = () => {
               }}>
                 Contact
               </a>
-              <Link to="/payment" className="w-full mt-4 bg-gradient-to-r from-primary-dark to-accent-teal text-white px-6 py-3 rounded-full hover:shadow-lg transition-all duration-300 block text-center">
-                Payment
-              </Link>
             </div>
           </div>
         )}
