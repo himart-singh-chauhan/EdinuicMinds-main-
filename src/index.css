@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom scrollbar styles using #225C70 and accent colors */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #225C70 0%, #14b8a6 100%); /* #225C70 to teal-500 */
+  border-radius: 8px;
+}
+::-webkit-scrollbar-track {
+  background: linear-gradient(90deg, #e0e7ef 0%, #f1f5f9 100%); /* subtle blue to slate gradient */
+  border-radius: 8px;
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #225C70 #e0e7ef;
+}
+
+/* FlagsScroll animation */
+@keyframes slide-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+.animate-slide-left {
+  animation: slide-left 30s linear infinite;
+}
