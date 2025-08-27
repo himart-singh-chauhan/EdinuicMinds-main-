@@ -24,7 +24,7 @@ const StudentShowcase: React.FC = () => {
       project: 'Research Paper',
       grade: 'Grade A',
       subject: 'Computer Science',
-  image: 'https://images.unsplash.com/photo-1494790108755-2616c5e0b12c?auto=format&fit=crop&w=400&q=80&fm=webp',
+  image: 'https://images.unsplash.com/photo-1511367461989-f85a21fda167?auto=format&fit=crop&w=400&q=80&fm=webp',
       testimonial: 'The quality of work and timely delivery made all the difference in my academic success. Highly recommend their services!',
       rating: 5,
       university: 'University of Toronto',
@@ -106,6 +106,7 @@ const StudentShowcase: React.FC = () => {
                   alt={`${student.name} - Academic Success`}
                   loading="lazy"
                   className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    onError={e => { e.currentTarget.onerror = null; e.currentTarget.src = 'https://ui-avatars.com/api/?name=' + encodeURIComponent(student.name) + '&background=2CA6A4&color=fff&size=128'; }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
                 <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 flex items-center space-x-2">
