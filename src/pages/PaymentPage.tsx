@@ -14,6 +14,7 @@ const PaymentPage: React.FC = () => {
     instructions: '',
     
     // Payment Details
+    amount: '',
     cardNumber: '',
     expiryDate: '',
     cvv: '',
@@ -75,15 +76,6 @@ const PaymentPage: React.FC = () => {
     'Germany', 'France', 'UAE', 'Singapore', 'Japan'
   ];
 
-  const calculateTotal = () => {
-    const selectedPlanData = plans.find(plan => plan.id === selectedPlan);
-    const basePrice = selectedPlanData?.price || 25;
-    const pageMultiplier = formData.pages;
-    const urgencyMultiplier = formData.deadline === '24 Hours' ? 2 : formData.deadline === '3 Days' ? 1.5 : 1;
-    
-    return Math.round(basePrice * pageMultiplier * urgencyMultiplier);
-  };
-
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
@@ -91,10 +83,50 @@ const PaymentPage: React.FC = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle payment processing
-    alert('Payment processing would be implemented here with a secure payment gateway.');
+
+    const [expMonth, expYear] = formData.expiryDate.split("/");
+
+    try {
+      const response = await fetch("http://localhost:5000/api/payment/pay", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          amount: formData.amount,
+          email: formData.email,
+          cardNumber: formData.cardNumber,
+          expMonth: parseInt(expMonth),
+          expYear: parseInt(expYear),
+          cvc: formData.cvv,
+          cardName: formData.cardName,
+          workType: formData.workType,
+          subject: formData.subject,
+          pages: formData.pages,
+          deadline: formData.deadline,
+          academicLevel: formData.academicLevel,
+          instructions: formData.instructions,
+          plan: selectedPlan,
+          firstName: formData.firstName,
+          lastName: formData.lastName,
+          country: formData.country,
+          address: formData.address,
+          city: formData.city,
+          zipCode: formData.zipCode,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        alert("✅ Payment successful! A confirmation email has been sent.");
+      } else {
+        alert("❌ Payment failed: " + data.error);
+      }
+    } catch (err) {
+      console.error(err);
+      alert("❌ Something went wrong");
+    }
   };
 
   return (
@@ -236,7 +268,7 @@ const PaymentPage: React.FC = () => {
             </div>
 
             {/* Plan Selection */}
-            <div className="bg-white rounded-2xl p-8 shadow-lg border border-neutral-100">
+            {/* <div className="bg-white rounded-2xl p-8 shadow-lg border border-neutral-100">
               <h2 className="font-heading text-xl font-bold text-primary-dark mb-6">
                 2. Choose Your Plan
               </h2>
@@ -281,12 +313,12 @@ const PaymentPage: React.FC = () => {
                   </div>
                 ))}
               </div>
-            </div>
+            </div> */}
 
             {/* Payment Method */}
             <div className="bg-white rounded-2xl p-8 shadow-lg border border-neutral-100">
               <h2 className="font-heading text-xl font-bold text-primary-dark mb-6">
-                3. Payment Method
+                2. Payment Method
               </h2>
               
               <div className="space-y-4 mb-6">
@@ -318,6 +350,23 @@ const PaymentPage: React.FC = () => {
                   <span className="font-medium text-primary-dark">PayPal</span>
                 </label>
               </div>
+
+              {/* Amount Field */}
+                <div className="md:col-span-2">
+                  <label className="block text-primary-dark font-medium mb-2">
+                    Amount (USD) *
+                  </label>
+                  <input
+                    type="number"
+                    name="amount"
+                    value={formData.amount || ''}
+                    onChange={handleInputChange}
+                    min="1"
+                    required
+                    className="w-full px-4 py-3 border border-neutral-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-accent-teal focus:border-transparent"
+                    placeholder="Enter amount"
+                  />
+                </div>
 
               {paymentMethod === 'card' && (
                 <form onSubmit={handleSubmit} className="space-y-6">
@@ -500,12 +549,9 @@ const PaymentPage: React.FC = () => {
                   <span className="text-neutral-600">Plan:</span>
                   <span className="font-medium text-primary-dark capitalize">{selectedPlan}</span>
                 </div>
-              </div>
-
-              <div className="border-t border-neutral-200 pt-4 mb-6">
-                <div className="flex justify-between items-center">
-                  <span className="font-heading text-lg font-bold text-primary-dark">Total:</span>
-                  <span className="font-heading text-2xl font-bold text-accent-teal">${calculateTotal()}</span>
+                <div className="flex justify-between text-sm">
+                  <span className="text-neutral-600">Amount:</span>
+                  <span className="font-medium text-primary-dark">{formData.amount || 'Not entered'}</span>
                 </div>
               </div>
 

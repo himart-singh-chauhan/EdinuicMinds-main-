@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Menu, X, BookOpen } from 'lucide-react';
+import { Menu, X} from 'lucide-react';
 import { useSmoothScroll } from '../hooks/useSmoothScroll';
 
 const Header: React.FC = () => {
@@ -29,9 +29,10 @@ const Header: React.FC = () => {
             e.preventDefault();
             handleNavigation('#home');
           }}>
-            <div className="bg-gradient-to-br from-primary-dark to-accent-teal p-2 rounded-xl group-hover:shadow-lg transition-all duration-300">
+            {/* <div className="bg-gradient-to-br from-primary-dark to-accent-teal p-2 rounded-xl group-hover:shadow-lg transition-all duration-300">
               <BookOpen className="h-6 w-6 text-white" />
-            </div>
+            </div> */}
+            <img src='https://gvu57hqxi3.ufs.sh/f/FOd38ztMu1UwmasSWIcW8p1VwSr6YDJTLjBZXz3x49d205ya' alt='' className='h-20 w-24'></img>
             <div>
               <h1 className="font-heading font-bold text-xl text-primary-dark group-hover:text-accent-teal transition-colors duration-300">
                 Edunique Minds
