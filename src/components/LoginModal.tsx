@@ -55,7 +55,8 @@ const LoginModal: React.FC<LoginModalProps> = ({ onClose }) => {
         navigate("/");
         onClose();
       } else {
-        alert(data.error);
+        alert(data.message || "Something went wrong");
+
       }
     } catch (err) {
       console.error(err);
