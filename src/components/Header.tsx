@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X} from 'lucide-react';
 import { useSmoothScroll } from '../hooks/useSmoothScroll';
+import LoginModal from "../components/LoginModal";
 
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [showLogin, setShowLogin] = useState(false);
   const scrollToSection = useSmoothScroll();
   const location = useLocation();
   const navigate = useNavigate();
@@ -67,6 +69,7 @@ const Header: React.FC = () => {
             <Link to="/payment" className="bg-gradient-to-r from-primary-dark to-accent-teal text-white px-6 py-2 rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300">
               Payment
             </Link>
+            <button onClick={() => setShowLogin(true)} className="bg-gradient-to-r from-primary-dark to-accent-teal text-white px-6 py-2 rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300">Login</button>
           </nav>
 
           {/* Mobile menu button */}
@@ -110,10 +113,14 @@ const Header: React.FC = () => {
               <Link to="/payment" className="block px-3 py-2 text-neutral-700 hover:text-accent-teal transition-colors" onClick={() => setIsOpen(false)}>
                 Payment
               </Link>
+              <button onClick={() => setShowLogin(true)} className="bg-gradient-to-r from-primary-dark to-accent-teal text-white px-6 py-2 rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300">Login</button>
             </div>
           </div>
         )}
       </div>
+
+      {/* ✅ Use Login Modal */}
+      {showLogin && <LoginModal onClose={() => setShowLogin(false)} />}
     </header>
   );
 };
