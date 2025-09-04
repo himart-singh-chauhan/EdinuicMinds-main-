@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Code, TrendingUp, Database, Cpu, BarChart, Briefcase, GraduationCap, BookOpen, Play, Star, Clock, Users } from 'lucide-react';
 
 const CoursesSection: React.FC = () => {
-  const [selectedCategory, setSelectedCategory] = useState('All');
+  const [selectedCategory, setSelectedCategory] = useState('B-Tech CSE');
 
   const categories = [
     { name: 'All', icon: BookOpen },
@@ -1275,17 +1275,9 @@ const CoursesSection: React.FC = () => {
                   ))}
                 </div>
 
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center space-x-2">
-                    <span className="font-heading text-xl font-bold text-primary-dark">
-                      {course.price}
-                    </span>
-                    <span className="text-neutral-400 line-through text-sm">
-                      {course.originalPrice}
-                    </span>
-                  </div>
+                <div className="flex items-center justify-end">
                   <button 
-                    onClick={() => window.location.href = '/payment'}
+                    onClick={() => window.open('https://wa.me/919217189006?text=Hi, I want to enroll in ' + course.title, '_blank')}
                     className="bg-gradient-to-r from-primary-dark to-accent-teal text-white font-medium px-6 py-2 rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300"
                   >
                     Enroll Now
