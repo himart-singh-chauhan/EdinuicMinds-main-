@@ -1,7 +1,7 @@
 // WhatsApp Floating Button
 const WhatsAppButton: React.FC = () => (
   <a
-    href="https://wa.me/919999999999" // Replace with your group link
+    href="https://wa.me/919217189006" // WhatsApp contact number
     target="_blank"
     rel="noopener noreferrer"
     className="fixed z-50 bottom-6 right-6 bg-green-500 hover:bg-green-600 rounded-full shadow-lg p-3 flex items-center justify-center transition-all duration-300"
