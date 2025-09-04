@@ -110,7 +110,7 @@ const ContactSection: React.FC = () => {
                   </div>
                   <div>
                     <p className="font-medium text-primary-dark">Email Us</p>
-                    <p className="text-neutral-600 text-sm">support@eduniqueminds.com</p>
+                    <p className="text-neutral-600 text-sm">info@eduniqueminds.com</p>
                   </div>
                 </div>
 
@@ -120,7 +120,7 @@ const ContactSection: React.FC = () => {
                   </div>
                   <div>
                     <p className="font-medium text-primary-dark">Call Us</p>
-                    <p className="text-neutral-600 text-sm">+1 (555) 123-4567</p>
+                    <p className="text-neutral-600 text-sm">+91 92171 89006</p>
                   </div>
                 </div>
 
@@ -343,9 +343,8 @@ const ContactSection: React.FC = () => {
                   Global Headquarters
                 </h4>
                 <p className="text-neutral-600">
-                  123 Academic Street<br />
-                  Education District<br />
-                  Global City, GC 12345
+                  #640, Tdi,<br />
+                  Sector 117, Mohali
                 </p>
               </div>
             </div>
