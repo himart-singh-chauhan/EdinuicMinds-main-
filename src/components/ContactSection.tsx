@@ -49,11 +49,30 @@ const ContactSection: React.FC = () => {
     }
   ], []);
 
-  const handleSubmit = React.useCallback((e: React.FormEvent) => {
+  // ✅ UPDATED handleSubmit
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitted(true);
-    setTimeout(() => setIsSubmitted(false), 3000);
-  }, []);
+
+    try {
+      const response = await fetch("https://backend-ed-x2dh.vercel.app/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+      if (data.success) {
+        setIsSubmitted(true);
+        setFormData({ name: "", email: "", country: "", queryType: "", message: "" });
+        setTimeout(() => setIsSubmitted(false), 3000);
+      } else {
+        alert("Something went wrong, please try again.");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert("Failed to send message.");
+    }
+  };
 
   const handleInputChange = React.useCallback((e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     setFormData(prev => ({

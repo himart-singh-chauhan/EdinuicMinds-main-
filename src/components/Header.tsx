@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Menu, X, BookOpen } from 'lucide-react';
+import { Menu, X} from 'lucide-react';
 import { useSmoothScroll } from '../hooks/useSmoothScroll';
+import LoginModal from "../components/LoginModal";
 
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [showLogin, setShowLogin] = useState(false);
   const scrollToSection = useSmoothScroll();
   const location = useLocation();
   const navigate = useNavigate();
@@ -29,9 +31,10 @@ const Header: React.FC = () => {
             e.preventDefault();
             handleNavigation('#home');
           }}>
-            <div className="bg-gradient-to-br from-primary-dark to-accent-teal p-2 rounded-xl group-hover:shadow-lg transition-all duration-300">
+            {/* <div className="bg-gradient-to-br from-primary-dark to-accent-teal p-2 rounded-xl group-hover:shadow-lg transition-all duration-300">
               <BookOpen className="h-6 w-6 text-white" />
-            </div>
+            </div> */}
+            <img src='https://gvu57hqxi3.ufs.sh/f/FOd38ztMu1UwmasSWIcW8p1VwSr6YDJTLjBZXz3x49d205ya' alt='' className='h-20 w-24'></img>
             <div>
               <h1 className="font-heading font-bold text-xl text-primary-dark group-hover:text-accent-teal transition-colors duration-300">
                 Edunique Minds
@@ -66,6 +69,7 @@ const Header: React.FC = () => {
             <Link to="/payment" className="bg-gradient-to-r from-primary-dark to-accent-teal text-white px-6 py-2 rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300">
               Payment
             </Link>
+            <button onClick={() => setShowLogin(true)} className="bg-gradient-to-r from-primary-dark to-accent-teal text-white px-6 py-2 rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300">Login</button>
           </nav>
 
           {/* Mobile menu button */}
@@ -109,10 +113,14 @@ const Header: React.FC = () => {
               <Link to="/payment" className="block px-3 py-2 text-neutral-700 hover:text-accent-teal transition-colors" onClick={() => setIsOpen(false)}>
                 Payment
               </Link>
+              <button onClick={() => setShowLogin(true)} className="bg-gradient-to-r from-primary-dark to-accent-teal text-white px-6 py-2 rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300">Login</button>
             </div>
           </div>
         )}
       </div>
+
+      {/* ✅ Use Login Modal */}
+      {showLogin && <LoginModal onClose={() => setShowLogin(false)} />}
     </header>
   );
 };
