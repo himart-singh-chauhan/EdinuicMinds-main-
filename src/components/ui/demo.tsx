@@ -3,6 +3,17 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
 const HeroDemo = () => {
+  // Smooth scroll function
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   return (
     <div className="min-h-screen w-full bg-gradient-to-br from-[#0B1426] via-[#1A2B3D] to-[#0D1B2A] text-white flex flex-col items-center justify-center p-8 relative overflow-hidden">
       
@@ -38,10 +49,17 @@ const HeroDemo = () => {
             
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 items-center pt-4">
-              <Button className="text-sm px-8 py-3 rounded-xl bg-[#2CA6A4] text-white border-0 hover:bg-[#2CA6A4]/90 transition-all duration-300 font-semibold">
+              <Button 
+                onClick={() => scrollToSection('how-it-works')}
+                className="text-sm px-8 py-3 rounded-xl bg-[#2CA6A4] text-white border-0 hover:bg-[#2CA6A4]/90 transition-all duration-300 font-semibold cursor-pointer"
+              >
                 Start Your Journey
               </Button>
-              <Button variant="outline" className="text-sm px-8 py-3 rounded-xl bg-transparent text-white border border-white/30 hover:bg-white/10 transition-all duration-300 font-semibold">
+              <Button 
+                onClick={() => scrollToSection('services-section')}
+                variant="outline" 
+                className="text-sm px-8 py-3 rounded-xl bg-transparent text-white border border-white/30 hover:bg-white/10 transition-all duration-300 font-semibold cursor-pointer"
+              >
                 Explore Programs
               </Button>
             </div>

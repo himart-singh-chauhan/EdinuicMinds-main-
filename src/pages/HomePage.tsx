@@ -42,13 +42,17 @@ const HomePage: React.FC = () => {
         <ImpactCounters />
       </Suspense>
       <Suspense fallback={<div className="h-60 bg-gray-100 animate-pulse rounded"></div>}>
-        <HowItWorks />
+        <div id="how-it-works">
+          <HowItWorks />
+        </div>
       </Suspense>
       <Suspense fallback={<div className="h-80 bg-gray-100 animate-pulse rounded"></div>}>
         <StudentShowcase />
       </Suspense>
       <Suspense fallback={<div className="h-60 bg-gray-100 animate-pulse rounded"></div>}>
-        <ServicesSection />
+        <div id="services-section">
+          <ServicesSection />
+        </div>
       </Suspense>
         <Suspense fallback={<div className="h-60 bg-gray-100 animate-pulse rounded"></div>}>
           <TrainingSection />
