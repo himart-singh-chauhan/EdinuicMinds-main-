@@ -814,7 +814,7 @@ const BlogSection: React.FC = () => {
         <h3>Conclusion</h3>
         <p>A strong academic portfolio is an investment in your future. It showcases your achievements, demonstrates your expertise, and opens doors to new opportunities. Start building yours today, focusing on quality over quantity, and remember that it's a living document that should grow and evolve with your career.</p>
       `,
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80&fm=webp',
+      image: 'https://www.cservetech.com/wp-content/uploads/2024/03/How-to-Build-a-Strong-Portfolio-as-an-IT-Student.png',
       author: 'Prof. Sophie Mueller',
       date: '2024-01-03',
       category: 'Career Advice',
@@ -1456,7 +1456,7 @@ const BlogSection: React.FC = () => {
         <h3>Conclusion</h3>
         <p>Effective time management is a skill that develops over time. Experiment with different techniques to find what works best for your learning style, schedule, and academic demands. Remember that the goal isn't to be busy—it's to be productive and maintain a healthy balance between academic success and personal well-being.</p>
       `,
-      image: 'https://images.unsplash.com/photo-1506784781895-38847b53074a?auto=format&fit=crop&w=600&q=80&fm=webp',
+      image: 'https://www.diyesinternational.edu.in/wp-content/uploads/2024/02/image1-54.webp',
       author: 'Prof. Lisa Chen',
       date: '2024-01-25',
       category: 'Study Guides',

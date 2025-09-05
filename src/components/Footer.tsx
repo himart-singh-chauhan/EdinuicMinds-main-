@@ -69,18 +69,17 @@ const Footer: React.FC = () => {
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-accent-teal" />
-                <span className="text-white/80">support@eduniqueminds.com</span>
+                <span className="text-white/80">info@eduniqueminds.com</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 text-accent-teal" />
-                <span className="text-white/80">+1 (555) 123-4567</span>
+                <span className="text-white/80">+91 92171 89006</span>
               </div>
               <div className="flex items-start space-x-3">
                 <MapPin className="h-5 w-5 text-accent-teal mt-1" />
                 <span className="text-white/80">
-                  123 Academic Street<br />
-                  Education District<br />
-                  Global City, GC 12345
+                  #640, Tdi,<br />
+                  Sector 117, Mohali
                 </span>
               </div>
             </div>
