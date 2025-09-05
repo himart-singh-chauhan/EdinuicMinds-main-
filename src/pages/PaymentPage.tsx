@@ -739,8 +739,8 @@ const PaymentPage: React.FC = () => {
                 <strong>Questions about our terms?</strong> We're here to help!
               </p>
               <div className="flex flex-col md:flex-row justify-center items-center space-y-2 md:space-y-0 md:space-x-4 text-sm text-gray-600">
-                <span>📧 support@eduniqueminds.com</span>
-                <span>📞 +1 (555) 123-4567</span>
+                <span>📧 info@eduniqueminds.com</span>
+                <span>📞 +91 92171 89006</span>
                 <span>💬 24/7 Live Chat Available</span>
               </div>
             </div>
