@@ -21,7 +21,7 @@ const HowItWorks: React.FC = () => {
     },
     {
       icon: CreditCard,
-      title: 'Payment First',
+      title: 'Secure Your Spot',
       description: 'Secure payment through our encrypted gateway. Your money is safe with us.',
       color: 'from-purple-400 to-purple-600',
       delay: '0.4s',

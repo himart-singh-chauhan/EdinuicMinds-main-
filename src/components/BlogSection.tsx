@@ -1829,14 +1829,16 @@ const BlogSection: React.FC = () => {
                      Get the latest academic insights and study tips delivered to your inbox.
                    </p>
                    <div className="space-y-3">
-                     <input
+                     {/* <input
                        type="email"
                        placeholder="Your email address"
                        className="w-full px-4 py-2 rounded-lg bg-white/20 backdrop-blur-sm border border-white/30 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/50"
-                     />
-                     <button className="w-full bg-white text-primary-dark font-medium py-2 px-4 rounded-lg hover:bg-white/90 transition-colors">
-                       Subscribe
-                     </button>
+                     /> */}
+                     <a href="https://wa.me/919217189006" target="_blank" rel="noopener noreferrer">
+                        <button className="w-full bg-white text-primary-dark font-medium py-2 px-4 rounded-lg hover:bg-white/90 transition-colors">
+                          Get Connected
+                        </button>
+                      </a>
                    </div>
                  </div>
 

@@ -8,6 +8,10 @@ interface LoginModalProps {
 const LoginModal: React.FC<LoginModalProps> = ({ onClose }) => {
   const modalRef = useRef<HTMLDivElement>(null);
   const [isLogin, setIsLogin] = useState<boolean>(true);
+  const [message, setMessage] = useState<{ text: string; type: "success" | "error" | "" }>({
+    text: "",
+    type: "",
+  });
   const navigate = useNavigate();
 
   // Close when clicking outside or pressing Escape key
@@ -38,6 +42,7 @@ const LoginModal: React.FC<LoginModalProps> = ({ onClose }) => {
   // Handle login form submit
   const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setMessage({ text: "", type: "" });
     const formData = new FormData(e.currentTarget);
     const email = formData.get("email");
     const password = formData.get("password");
@@ -52,20 +57,24 @@ const LoginModal: React.FC<LoginModalProps> = ({ onClose }) => {
       const data = await res.json();
       if (res.ok) {
         localStorage.setItem("token", data.token);
-        navigate("/");
-        onClose();
+        setMessage({ text: "Login successful!", type: "success" });
+        setTimeout(() => {
+          navigate("/");
+          onClose();
+        }, 1500);
       } else {
-        alert(data.message || "Something went wrong");
-
+        setMessage({ text: data.message || "Something went wrong", type: "error" });
       }
     } catch (err) {
       console.error(err);
+      setMessage({ text: "Server error, please try again later.", type: "error" });
     }
   };
 
   // Handle signup form submit
   const handleSignup = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setMessage({ text: "", type: "" });
     const formData = new FormData(e.currentTarget);
     const name = formData.get("name");
     const email = formData.get("email");
@@ -81,13 +90,17 @@ const LoginModal: React.FC<LoginModalProps> = ({ onClose }) => {
       const data = await res.json();
       if (res.ok) {
         localStorage.setItem("token", data.token);
-        navigate("/");
-        onClose();
+        setMessage({ text: "Signup successful! Please login now.", type: "success" });
+        setTimeout(() => {
+          navigate("/");
+          onClose();
+        }, 1500);
       } else {
-        alert(data.error);
+        setMessage({ text: data.message || "Something went wrong", type: "error" });
       }
     } catch (err) {
       console.error(err);
+      setMessage({ text: "Server error, please try again later.", type: "error" });
     }
   };
 
@@ -110,6 +123,19 @@ const LoginModal: React.FC<LoginModalProps> = ({ onClose }) => {
             {isLogin ? "Sign in to continue" : "Join us today"}
           </p>
         </div>
+
+        {/* Show Messages */}
+        {message.text && (
+          <div
+            className={`mb-4 p-3 rounded-lg text-sm font-medium ${
+              message.type === "success"
+                ? "bg-green-100 text-green-700 border border-green-300"
+                : "bg-red-100 text-red-700 border border-red-300"
+            }`}
+          >
+            {message.text}
+          </div>
+        )}
 
         {/* Forms */}
         {isLogin ? (
@@ -218,7 +244,10 @@ const LoginModal: React.FC<LoginModalProps> = ({ onClose }) => {
           <span
             className="font-semibold cursor-pointer hover:underline transition-all duration-200"
             style={{ color: "#3a969d" }}
-            onClick={() => setIsLogin(!isLogin)}
+            onClick={() => {
+              setIsLogin(!isLogin);
+              setMessage({ text: "", type: "" });
+            }}
           >
             {isLogin ? "Sign Up" : "Login"}
           </span>
