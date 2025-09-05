@@ -50,7 +50,7 @@ const HomePage: React.FC = () => {
         <StudentShowcase />
       </Suspense>
       <Suspense fallback={<div className="h-60 bg-gray-100 animate-pulse rounded"></div>}>
-        <div id="services-section">
+        <div id="services">
           <ServicesSection />
         </div>
       </Suspense>
@@ -61,7 +61,9 @@ const HomePage: React.FC = () => {
           <DevelopmentSection />
         </Suspense>
       <Suspense fallback={<div className="h-80 bg-gray-100 animate-pulse rounded"></div>}>
-        <CoursesSection />
+        <div id="courses">
+          <CoursesSection />
+        </div>
       </Suspense>
       <Suspense fallback={<div className="h-60 bg-gray-100 animate-pulse rounded"></div>}>
         <TestimonialsSection />
@@ -70,10 +72,14 @@ const HomePage: React.FC = () => {
         <AboutSection />
       </Suspense>
       <Suspense fallback={<div className="h-60 bg-gray-100 animate-pulse rounded"></div>}>
-        <BlogSection />
+        <div id="blog">
+          <BlogSection />
+        </div>
       </Suspense>
       <Suspense fallback={<div className="h-40 bg-gray-100 animate-pulse rounded"></div>}>
-        <ContactSection />
+        <div id="contact">
+          <ContactSection />
+        </div>
       </Suspense>
       </PageTransition>
       <WhatsAppButton />
