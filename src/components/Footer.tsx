@@ -3,6 +3,17 @@ import { Link } from 'react-router-dom';
 import { BookOpen, Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
 
 const Footer: React.FC = () => {
+  // Smooth scroll function
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   return (
     <footer className="bg-gradient-to-br from-primary-dark to-primary-light text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -41,11 +52,10 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="font-heading font-bold text-lg mb-6">Quick Links</h4>
             <ul className="space-y-3">
-              <li><Link to="/about" className="text-white/80 hover:text-accent-teal transition-colors">About Us</Link></li>
-              <li><Link to="/courses" className="text-white/80 hover:text-accent-teal transition-colors">Courses</Link></li>
-              <li><Link to="/services" className="text-white/80 hover:text-accent-teal transition-colors">Services</Link></li>
-              <li><Link to="/blog" className="text-white/80 hover:text-accent-teal transition-colors">Blog</Link></li>
-              <li><Link to="/contact" className="text-white/80 hover:text-accent-teal transition-colors">Contact</Link></li>
+              <li><a href="#courses" onClick={(e) => { e.preventDefault(); scrollToSection('courses'); }} className="text-white/80 hover:text-accent-teal transition-colors cursor-pointer">Courses</a></li>
+              <li><a href="#services" onClick={(e) => { e.preventDefault(); scrollToSection('services'); }} className="text-white/80 hover:text-accent-teal transition-colors cursor-pointer">Services</a></li>
+              <li><a href="#blog" onClick={(e) => { e.preventDefault(); scrollToSection('blog'); }} className="text-white/80 hover:text-accent-teal transition-colors cursor-pointer">Blog</a></li>
+              <li><a href="#contact" onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }} className="text-white/80 hover:text-accent-teal transition-colors cursor-pointer">Contact</a></li>
               <li><Link to="/faq" className="text-white/80 hover:text-accent-teal transition-colors">FAQ</Link></li>
             </ul>
           </div>
