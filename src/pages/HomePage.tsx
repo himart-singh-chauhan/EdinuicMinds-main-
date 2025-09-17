@@ -59,7 +59,9 @@ const HomePage: React.FC = () => {
         </div>
       </Suspense>
         <Suspense fallback={<div className="h-60 bg-gray-100 animate-pulse rounded"></div>}>
-          <TrainingSection />
+          <div id="master-skills">
+            <TrainingSection />
+          </div>
         </Suspense>
         <Suspense fallback={<div className="h-60 bg-gray-100 animate-pulse rounded"></div>}>
           <DevelopmentSection />

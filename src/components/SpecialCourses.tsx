@@ -311,9 +311,9 @@ const SpecialCourses = () => {
   );
 
   return (
-    <div className="min-h-screen py-16 bg-white">
-      {/* Animated background elements */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+    <div className="min-h-screen py-16 bg-white relative overflow-hidden">
+      {/* Animated background elements - contained within this component */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
         {[...Array(3)].map((_, i) => (
           <div
             key={i}

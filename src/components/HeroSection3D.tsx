@@ -11,9 +11,9 @@ function AnimatedBox({ position, color, size = 1 }: any) {
   
   useFrame((state) => {
     if (meshRef.current) {
-  meshRef.current.rotation.x = state.clock.elapsedTime * 0.8 // Increased speed
-  meshRef.current.rotation.y = state.clock.elapsedTime * 0.8 // Increased speed
-      meshRef.current.position.y = position[1] + Math.sin(state.clock.elapsedTime) * 0.2
+      meshRef.current.rotation.x = state.clock.elapsedTime * 0.9 // Adjusted speed 
+      meshRef.current.rotation.y = state.clock.elapsedTime * 0.9 // Adjusted speed
+      meshRef.current.position.y = position[1] + Math.sin(state.clock.elapsedTime * 1.2) * 0.2
     }
   })
 

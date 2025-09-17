@@ -70,7 +70,7 @@ const AnimatedBoxes = () => {
         const now = performance.now();
         if (now - lastFrame.current > 33) { // ~30fps
             if (groupRef.current) {
-                groupRef.current.rotation.x += delta * 0.05;
+                groupRef.current.rotation.x += delta * 0.08; // Set to 0.08 as requested
             }
             lastFrame.current = now;
         }

@@ -56,7 +56,7 @@ const HeroDemo = () => {
                 Start Your Journey
               </Button>
               <Button 
-                onClick={() => scrollToSection('services-section')}
+                onClick={() => scrollToSection('master-skills')}
                 variant="outline" 
                 className="text-sm px-8 py-3 rounded-xl bg-transparent text-white border border-white/30 hover:bg-white/10 transition-all duration-300 font-semibold cursor-pointer"
               >
