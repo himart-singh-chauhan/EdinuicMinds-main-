@@ -66,9 +66,9 @@ const PrivacyPolicyPage: React.FC = () => {
             <p className="text-gray-600">
               If you have any questions about this Privacy Policy, please contact us at:
               <br />
-              Email: privacy@eduniqueminds.com
+              Email: info@eduniqueminds.com
               <br />
-              Phone: +1 (555) 123-4567
+              Phone: +91 92171 89006
             </p>
           </div>
         </div>

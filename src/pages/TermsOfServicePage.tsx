@@ -78,9 +78,9 @@ const TermsOfServicePage: React.FC = () => {
             <p className="text-gray-600">
               If you have any questions about these Terms of Service, please contact us at:
               <br />
-              Email: legal@eduniqueminds.com
+              Email: info@eduniqueminds.com
               <br />
-              Phone: +1 (555) 123-4567
+              Phone: +91 92171 89006
             </p>
           </div>
         </div>

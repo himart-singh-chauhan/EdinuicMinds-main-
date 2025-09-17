@@ -78,8 +78,8 @@ const Footer: React.FC = () => {
               <div className="flex items-start space-x-3">
                 <MapPin className="h-5 w-5 text-accent-teal mt-1" />
                 <span className="text-white/80">
-                  #640, Tdi,<br />
-                  Sector 117, Mohali
+                  
+                  Chandigarh
                 </span>
               </div>
             </div>
@@ -90,7 +90,7 @@ const Footer: React.FC = () => {
         <div className="border-t border-white/20 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-white/80">
-              © 2024 Edunique Minds Pvt. Ltd. All rights reserved.
+              © 2018 Edunique Minds Pvt. Ltd. All rights reserved.
             </p>
             <div className="flex space-x-6">
               <Link to="/privacy-policy" className="text-white/80 hover:text-accent-teal transition-colors text-sm">

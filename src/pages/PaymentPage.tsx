@@ -156,7 +156,7 @@ const PaymentForm: React.FC = () => {
           return
         }
 
-        const response = await fetch("http://localhost:5000/api/payment/pay", {
+        const response = await fetch("https://backend-ed-x2dh.vercel.app/api/payment/pay", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
@@ -187,7 +187,7 @@ const PaymentForm: React.FC = () => {
           alert("❌ Payment failed: " + data.error)
         }
       } else if (paymentMethod === "paypal") {
-        const response = await fetch("http://localhost:5000/api/payment/paypal", {
+        const response = await fetch("https://backend-ed-x2dh.vercel.app/api/payment/paypal", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({

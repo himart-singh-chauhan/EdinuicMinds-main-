@@ -335,8 +335,9 @@ const ContactSection: React.FC = () => {
                 Headquartered in the heart of the academic district, serving students worldwide.
               </p>
             </div>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6859.573905929008!2d76.66502249357912!3d30.724389199999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390fefb12b2d30c7%3A0xa1d2551ed4d6f1e4!2sTDI%20Mohali!5e0!3m2!1sen!2sin!4v1758102705711!5m2!1sen!2sin" width="1150" height="400" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             
-            <div className="bg-gradient-to-br from-neutral-100 to-neutral-200 rounded-xl h-64 flex items-center justify-center">
+            {/* <div className="bg-gradient-to-br from-neutral-100 to-neutral-200 rounded-xl h-64 flex items-center justify-center">
               <div className="text-center">
                 <MapPin className="h-12 w-12 text-accent-teal mx-auto mb-4" />
                 <h4 className="font-heading text-lg font-bold text-primary-dark mb-2">
@@ -347,7 +348,7 @@ const ContactSection: React.FC = () => {
                   Sector 117, Mohali
                 </p>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
