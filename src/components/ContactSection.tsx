@@ -181,7 +181,10 @@ const ContactSection: React.FC = () => {
               >
                 Get Instant Quote →
               </button>
-              <button className="w-full bg-white text-primary-dark font-medium py-3 px-6 rounded-xl border-2 border-primary-dark hover:bg-primary-dark hover:text-white transition-all duration-300">
+              <button 
+                onClick={() => window.open('https://wa.me/919217189006?text=Hi, I want to schedule a consultation for academic services', '_blank')}
+                className="w-full bg-white text-primary-dark font-medium py-3 px-6 rounded-xl border-2 border-primary-dark hover:bg-primary-dark hover:text-white transition-all duration-300"
+              >
                 Schedule Consultation
               </button>
             </div>
