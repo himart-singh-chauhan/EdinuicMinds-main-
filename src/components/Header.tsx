@@ -45,25 +45,25 @@ const Header: React.FC = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-6">
-            <a href="#courses" className="text-neutral-700 hover:text-accent-teal transition-colors duration-300 font-medium" onClick={(e) => {
+            <a href="#courses" className="text-primary-dark hover:text-accent-teal transition-colors duration-300 font-medium" onClick={(e) => {
               e.preventDefault();
               handleNavigation('#courses');
             }}>
               Courses
             </a>
-            <a href="#services" className="text-neutral-700 hover:text-accent-teal transition-colors duration-300 font-medium" onClick={(e) => {
+            <a href="#services" className="text-primary-dark hover:text-accent-teal transition-colors duration-300 font-medium" onClick={(e) => {
               e.preventDefault();
               handleNavigation('#services');
             }}>
               Services
             </a>
-            <a href="#blog" className="text-neutral-700 hover:text-accent-teal transition-colors duration-300 font-medium" onClick={(e) => {
+            <a href="#blog" className="text-primary-dark hover:text-accent-teal transition-colors duration-300 font-medium" onClick={(e) => {
               e.preventDefault();
               handleNavigation('#blog');
             }}>
               Blog
             </a>
-            <a href="#contact" className="text-neutral-700 hover:text-accent-teal transition-colors duration-300 font-medium" onClick={(e) => {
+            <a href="#contact" className="text-primary-dark hover:text-accent-teal transition-colors duration-300 font-medium" onClick={(e) => {
               e.preventDefault();
               handleNavigation('#contact');
             }}>
@@ -90,28 +90,28 @@ const Header: React.FC = () => {
         {isOpen && (
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-neutral-200">
-              <a href="#courses" className="block px-3 py-2 text-neutral-700 hover:text-accent-teal transition-colors" onClick={(e) => {
+              <a href="#courses" className="block px-3 py-2 text-primary-dark hover:text-accent-teal transition-colors" onClick={(e) => {
                 e.preventDefault();
                 handleNavigation('#courses');
                 setIsOpen(false);
               }}>
                 Courses
               </a>
-              <a href="#services" className="block px-3 py-2 text-neutral-700 hover:text-accent-teal transition-colors" onClick={(e) => {
+              <a href="#services" className="block px-3 py-2 text-primary-dark hover:text-accent-teal transition-colors" onClick={(e) => {
                 e.preventDefault();
                 handleNavigation('#services');
                 setIsOpen(false);
               }}>
                 Services
               </a>
-              <a href="#blog" className="block px-3 py-2 text-neutral-700 hover:text-accent-teal transition-colors" onClick={(e) => {
+              <a href="#blog" className="block px-3 py-2 text-primary-dark hover:text-accent-teal transition-colors" onClick={(e) => {
                 e.preventDefault();
                 handleNavigation('#blog');
                 setIsOpen(false);
               }}>
                 Blog
               </a>
-              <a href="#contact" className="block px-3 py-2 text-neutral-700 hover:text-accent-teal transition-colors" onClick={(e) => {
+              <a href="#contact" className="block px-3 py-2 text-primary-dark hover:text-accent-teal transition-colors" onClick={(e) => {
                 e.preventDefault();
                 handleNavigation('#contact');
                 setIsOpen(false);

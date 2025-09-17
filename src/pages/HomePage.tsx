@@ -20,6 +20,7 @@ import { HeroDemo } from '../components/ui/demo';
 const FlagsScroll = lazy(() => import('../components/FlagsScroll'));
 const ImpactCounters = lazy(() => import('../components/ImpactCounters'));
 const HowItWorks = lazy(() => import('../components/HowItWorks'));
+const SpecialCourses = lazy(() => import('../components/SpecialCourses'));
 const StudentShowcase = lazy(() => import('../components/StudentShowcase'));
 const ServicesSection = lazy(() => import('../components/ServicesSection'));
 const CoursesSection = lazy(() => import('../components/CoursesSection'));
@@ -45,6 +46,9 @@ const HomePage: React.FC = () => {
         <div id="how-it-works">
           <HowItWorks />
         </div>
+      </Suspense>
+      <Suspense fallback={<div className="h-80 bg-gray-100 animate-pulse rounded"></div>}>
+        <SpecialCourses />
       </Suspense>
       <Suspense fallback={<div className="h-80 bg-gray-100 animate-pulse rounded"></div>}>
         <StudentShowcase />
